@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show record</title>
+     <link rel="stylesheet" href="{% static 'show.css'%}">
+</head>
+<body>
+    {{msg}}
+    <h2 id="head">Show All Record</h2>
+    <div id="divtwo">
+        <form action="/">
+            <input type="submit" value="<<back">
+        </form>
+    </div>
+    <div id="divone">
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>DATA 1</th>
+                <th>DATA 2</th>
+                <th>BUTTONS</th>
+            </thead>
+            {%for d in data%}
+               <tr>
+                   <td>{{d.id}}</td>
+                   <td>{{d.data1}}</td>
+                   <td>{{d.data2}}</td>
+                   <td>
+                       <a href="/edit?id={{d.id}}">EDIT</a>
+                       <a href="/delete?id={{d.id}}">DELETE</a>
+                   </td>
+               </tr>
+            {%endfor%}
+
+        </table>
+
+    </div>
+</body>
+</html>

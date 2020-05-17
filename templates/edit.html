@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit page</title>
+    <link rel="stylesheet" href="{% static 'edit.css'%}">
+</head>
+<body>
+    
+    <div >
+        <form action="/show">
+            <input type="submit" value="SHOE RECORD">
+        </form>
+    </div>
+    <div id="divone">
+        <form action="/recordedit" method="POST">
+            {%csrf_token%}
+            <h3>ID :<input required autofocus type="text" id="id" name="id" value={{id}} ></h3>
+            <h3>Data1: <input  required type="text" id="data1" name="data1" value={{data1}}></h3>
+            <h3>Data2: <input  required type="text" id="data2" name="data2" value={{data2}}></h3>
+            <input type="submit" id="btn" value="EDIT RECORD">
+        </form>
+    </div>
+      {{msg}}
+</body>
+</html>

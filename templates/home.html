@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curd operation</title>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+</head>
+<body>
+    {{msg}}
+    <div id="divtwo">
+        <form action="/show">
+            <input type="submit" value="SHOE RECORD">
+        </form>
+    </div>
+    <div id="divone">
+        <form action="/send" method="POST">
+            {%csrf_token%}
+            <h3>ID :<input required autofocus type="text" id="id" name="id"></h3>
+            <h3>Data1: <input  required type="text" id="data1" name="data1"></h3>
+            <h3>Data2: <input  required type="text" id="data2" name="data2"></h3>
+            <input type="submit" id="btn">
+        </form>
+    </div>
+</body>
+</html>
